@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+<package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
+	<id>winrules:CustomAction</id>
+	<name>Custom Action</name>
+	<type>modification</type>
+	<version>4.0</version>
+	<install for="1.0 Alpha">
+		<readme type="file">license.txt</readme>
+		<database>install.php</database>
+		<require-file name="CustomAction.php" destination="SOURCEDIR" />
+		<require-file name="CustomAction.template.php" destination="$themedir" />
+		<modification type="file">modification.xml</modification>
+	</install>
+
+	<install>
+		<readme type="inline" parsebbc="true">[color=red]The newer versions of this add-on don't work on SMF. Please install a pre-4.0 version, or upgrade to ElkArte.[/color]</readme>
+	</install>
+
+	<uninstall>
+		<readme type="inline">This will uninstall Custom Action.</readme>
+		<database>uninstall.php</database>
+		<remove-file name="SOURCEDIR/CustomAction.php" />
+		<remove-file name="$themedir/CustomAction.template.php" />
+		<modification type="file" reverse="true">modification.xml</modification>
+	</uninstall>
+	<upgrade>
+		<readme type="inline">Sorry, but there is no upgrade package from your version. Please uninstall the previous version, and install this version. You won't lose any data.</readme>
+	</upgrade>
+</package-info>
